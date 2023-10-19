@@ -53,12 +53,15 @@ class sandbox_Public {
 		$this->version = $version;
 
 	}
-
-	/**
+    /**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
+
+
+
+
 	public function enqueue_styles() {
 
 		/**

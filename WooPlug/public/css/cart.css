@@ -129,8 +129,11 @@ button[name='update_cart'] {
 
 /* Styles pour la colonne d'image miniature du produit */
 .product-thumbnail {
-    flex: 1;
-    width: 100px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
+    width: 200px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
+}
+.product-thumbnail img {
+    width: 200px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
+    border-radius: 5px!important;
 }
 
 .product-thumbnail img {
@@ -181,6 +184,20 @@ input.qty::-webkit-inner-spin-button {
 
 .coupon input[type="text"] {
     width: 300px; /* Ajustez la largeur du champ de coupon selon vos besoins */
+}
+
+table {
+    border-collapse: collapse;
+    border: none;
+}
+
+/* Retire les bordures des cellules du tableau */
+.elementor-widget-woocommerce-cart .woocommerce table.cart td.product-name , td.product-price , td.product-quantity, td.product-details, td.product-remove, td.product-subtotal, td.product-thumbnail{
+    border: none!important;
+}
+
+.product-tab{
+    width: 100%;
 }
 
 

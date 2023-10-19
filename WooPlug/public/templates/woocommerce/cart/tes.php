@@ -33,17 +33,7 @@ defined( 'ABSPATH' ) || exit;
 
     <!-- Tableau affichant les éléments du panier -->
     <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents cart-tab white-card" cellspacing="0">
-        <thead>
-        <!-- En-têtes de colonnes du tableau -->
-        <tr>
-            <th class="product-thumbnail"><span class="screen-reader-text"><?php esc_html_e( 'Thumbnail image', 'woocommerce' ); ?></span></th>
-            <th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-            <th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-            <th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-            <th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'woocommerce' ); ?></span></th>
-            <th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-        </tr>
-        </thead>
+
         <tbody>
         <?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
@@ -61,7 +51,7 @@ defined( 'ABSPATH' ) || exit;
                 // Obtient le lien vers le produit
                 $product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
                 ?>
-                <tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+                <tr class="woocommerce-cart-form__cart-item products-tabs <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
                     <!-- Colonne d'image miniature du produit -->
                     <td class="product-thumbnail">
@@ -164,7 +154,7 @@ defined( 'ABSPATH' ) || exit;
         <!-- Point d'accroche pour le contenu après les éléments du panier -->
         <?php do_action( 'woocommerce_cart_contents' ); ?>
         <tr>
-            <td colspan="6" class="actions">
+            <td colspan="6" class="actions hide">
 
                 <?php if ( wc_coupons_enabled() ) { ?>
                     <div class="coupon">

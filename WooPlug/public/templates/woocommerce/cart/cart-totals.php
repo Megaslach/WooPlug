@@ -136,6 +136,7 @@ defined('ABSPATH') || exit;
     <div class="total_cart white-card">
         <div class="total_cart_info">
             <div class="coupon">
+
                     <div class="custom-coupon-form">
                         <h3><?php esc_html_e( 'Coupon', 'woocommerce' ); ?></h3>
                         <form class="coupon" method="post">
@@ -143,9 +144,6 @@ defined('ABSPATH') || exit;
                         </form>
                     </div>
             </div>
-
-
-
 
 
             <h2><?php esc_html_e('Cart totals', 'woocommerce'); ?></h2>
@@ -168,24 +166,6 @@ defined('ABSPATH') || exit;
                     <td data-title="<?php echo esc_attr(wc_cart_totals_coupon_label($coupon, false)); ?>"><?php wc_cart_totals_coupon_html($coupon); ?></td>
                 </tr>
             <?php endforeach; ?>
-
-            <?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
-                <!-- Si le panier nécessite des frais de port et que l'affichage des frais de port est activé, affiche cette section. -->
-
-                <!-- Affiche les frais de livraison. -->
-
-                <?php do_action('woocommerce_cart_totals_after_shipping'); ?>
-
-            <?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')) : ?>
-                <!-- Si le panier nécessite des frais de port et que le calcul des frais de port est activé dans les paramètres WooCommerce, affiche cette section. -->
-
-                <tr class="shipping">
-                    <!-- Ligne affichant les frais de port. -->
-                    <th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
-                    <td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>"><?php woocommerce_shipping_calculator(); ?></td>
-                </tr>
-
-            <?php endif; ?>
 
             <!-- Boucle pour afficher des frais supplémentaires, le cas échéant. -->
             <?php foreach (WC()->cart->get_fees() as $fee) : ?>

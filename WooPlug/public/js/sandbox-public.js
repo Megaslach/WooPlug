@@ -45,36 +45,9 @@
 
 			timeout = setTimeout(function() {
 				$("[name='update_cart']").trigger("click");
-			}, 1000 );
+			}, 100);
 
 		});
-
-		$(function() {
-			// Gérer le clic sur le bouton "Update cart"
-			$('.update-cart-button').on('click', function() {
-				var $this = $(this);
-				var cartItemKey = $this.data('cart-key');
-				var newQuantity = $this.closest('.cart-item').find('input.qty').val();
-
-				// Effectuer la requête AJAX pour mettre à jour la quantité du produit
-				$.ajax({
-					type: 'POST',
-					url: wc_cart_params.ajax_url,
-					data: {
-						action: 'woocommerce_update_cart',
-						cart_key: cartItemKey,
-						quantity: newQuantity,
-					},
-					success: function(response) {
-						if (response) {
-							// Mettre à jour le contenu du panier sans recharger la page
-							$(document.body).trigger('updated_cart_totals');
-						}
-					}
-				});
-			});
-		});
-
 
 
 
