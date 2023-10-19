@@ -1,0 +1,197 @@
+body{
+    width: 100vw;
+}
+
+:root{
+    --main-border-color: #333;
+    --main-button-color: #34c424;
+    --main-background-color: #e7ca91
+}
+
+
+
+.cart_totals{
+    float: unset;
+    width: 100%!important;
+    display: grid;
+    grid-template-columns: 390px auto;
+    column-gap: 10px;
+    row-gap: 32px;
+}
+
+.cart_totals tr th{
+    border: none !important;
+}
+
+.carte-collaterals{
+
+}
+
+.e-shop-table{
+    width: 100% !important;
+
+
+}
+.e-cart-section{
+    border: none !important;
+
+}
+
+.shipping-calc{
+    width: 100%;
+}
+
+.white-card{
+    background-color: var(--main-background-color);
+}
+
+.shipping_calculator_form_sandbox {
+
+    text-align: center;
+    padding: 20px;
+}
+
+.checkout-button{
+    background-color: var(--main-button-color);
+    border-radius: 10px;
+    color:#fff;
+}
+.total_cart_info{
+    width: 70%;
+    padding: 20px;
+}
+
+.summary_info {
+    text-align: center;
+}
+
+.before_cart_info{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+
+}
+
+.cart_all{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+/* Styles pour les articles du panier */
+.woocommerce-cart-form__cart-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.woocommerce-cart-form__contents table.cart th,
+.woocommerce-cart-form__contents table.cart td {
+    border: none;
+    padding: 10px; /* Ajoute un peu d'espacement entre le contenu et les cellules du tableau */
+}
+
+input[name='update_cart'] {
+    display: none !important;
+}
+button[name='update_cart'] {
+    display: none !important;
+}
+
+
+
+
+/* Styles pour le conteneur du panier */
+.cart-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacement vertical entre les éléments du panier */
+}
+
+/* Styles pour chaque élément du panier */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.right_info{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+
+}
+
+
+/* Styles pour la colonne d'image miniature du produit */
+.product-thumbnail {
+    flex: 1;
+    width: 100px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
+}
+
+.product-thumbnail img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles pour la colonne des détails du produit */
+.product-details {
+    flex: 2;
+    padding: 0 10px;
+}
+
+/* Styles pour le nom du produit */
+.product-name a {
+    text-decoration: none;
+    color: #333!important;
+}
+
+/* Styles pour le prix du produit */
+.product-price {
+    font-weight: bold;
+}
+
+/* Styles pour la quantité du produit */
+.product-quantity {
+    min-width: 100px; /* Ajustez la largeur de la colonne de quantité selon vos besoins */
+}
+input.qty::-webkit-outer-spin-button,
+input.qty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Styles pour le sous-total */
+.product-subtotal {
+    font-weight: bold;
+}
+
+/* Styles pour les actions du panier */
+.cart-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacement vertical entre les éléments d'action du panier */
+}
+
+/* Styles pour le champ de coupon */
+
+.coupon input[type="text"] {
+    width: 300px; /* Ajustez la largeur du champ de coupon selon vos besoins */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

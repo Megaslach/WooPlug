@@ -1,0 +1,430 @@
+# Copyright (C) 2021 Dylan Prudhomme
+# This file is distributed under the same license as the sandbox plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: sandbox 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sandbox\n"
+"POT-Creation-Date: 2021-11-19T16:19:26+00:00\n"
+"PO-Revision-Date: 2021-11-19 17:20+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Domain: sandbox\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Plugin Name of the plugin
+msgid "sandbox"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.abyxo.com"
+msgstr ""
+
+#. Description of the plugin
+msgid "Plugin made by Abyxo for sandbox website."
+msgstr "Plugin développé par Abyxo pour le site sandbox."
+
+#. Author of the plugin
+msgid "Mathis Delmas"
+msgstr ""
+
+#: admin/class-sandbox-admin-shipping.php:16
+msgid "Monday"
+msgstr "Lundi"
+
+#: admin/class-sandbox-admin-shipping.php:17
+msgid "Tuesday"
+msgstr "Mardi"
+
+#: admin/class-sandbox-admin-shipping.php:18
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#: admin/class-sandbox-admin-shipping.php:19
+msgid "Thursday"
+msgstr "Jeudi"
+
+#: admin/class-sandbox-admin-shipping.php:20
+msgid "Friday"
+msgstr "Vendredi"
+
+#: admin/class-sandbox-admin-shipping.php:21
+msgid "Saturday"
+msgstr "Samedi"
+
+#: admin/class-sandbox-admin-shipping.php:22
+msgid "Sunday"
+msgstr "Dimanche"
+
+#: admin/class-sandbox-admin-shipping.php:27
+msgid "Data to display"
+msgstr "Donnée à afficher"
+
+#: admin/class-sandbox-admin-shipping.php:29
+msgid "Configure here the data displayed on shipping listing"
+msgstr ""
+"Configurez ici les données affichées dans la liste des méthodes d'expédition"
+
+#: admin/class-sandbox-admin-shipping.php:33
+msgid "Free shipping minimum amount"
+msgstr "Montant minimum pour la livraison gratuite"
+
+#: admin/class-sandbox-admin-shipping.php:36
+msgid "Set minimum amount to get free shipping"
+msgstr "Indiquez le montant minimum pour la livraison gratuite"
+
+#: admin/class-sandbox-admin-shipping.php:41
+msgid "Logo id"
+msgstr "ID du logo"
+
+#: admin/class-sandbox-admin-shipping.php:44
+msgid "Set the media id for this shipping method logo"
+msgstr "Indiquez l'ID du logo de cette méthode d'expédition"
+
+#: admin/class-sandbox-admin-shipping.php:49
+msgid "Business delivery days"
+msgstr "Jours de livraison ouvrés"
+
+#: admin/class-sandbox-admin-shipping.php:52
+msgid "Choose the business delivery days"
+msgstr "Choisissez les jours de livraison ouvrés"
+
+#: admin/class-sandbox-admin-shipping.php:57
+msgid "Before delivery day(s)"
+msgstr "Avant le(s) jour(s) de livraison"
+
+#: admin/class-sandbox-admin-shipping.php:59
+#: admin/class-sandbox-admin-shipping.php:90
+#: public/templates/woocommerce/cart/cart-totals.php:178
+#: public/templates/woocommerce/checkout/review-order.php:93
+msgid "Shipping"
+msgstr "Livraison"
+
+#: admin/class-sandbox-admin-shipping.php:60
+msgid "Set the text before displaying delivery day(s)"
+msgstr "Indiquez le texte s'affichant avant le(s) date(s) de livraison"
+
+#: admin/class-sandbox-admin-shipping.php:65
+msgid "Delivery scheduled starting for"
+msgstr "Premier jour prévu de livraison"
+
+#: admin/class-sandbox-admin-shipping.php:72
+msgid "Set the scheduled delivery starting number of days"
+msgstr "Indiquez le nombre de jours prévu pour le début de la livraison"
+
+#: admin/class-sandbox-admin-shipping.php:76
+msgid "Delivery scheduled ended at"
+msgstr "Dernier jour prévu de livraison"
+
+#: admin/class-sandbox-admin-shipping.php:83
+msgid "Set the scheduled delivery ending number of days"
+msgstr "Indiquez le nombre de jours prévu pour la fin de la livraison"
+
+#: admin/class-sandbox-admin-shipping.php:88
+msgid "After delivery day(s)"
+msgstr "Après le(s) jour(s) de livraison"
+
+#: admin/class-sandbox-admin-shipping.php:91
+msgid "Set the text after displaying delivery day(s)"
+msgstr "Indiquez le texte s'affichant après le(s) date(s) de livraison"
+
+#: includes/utils.php:48
+msgid "Between"
+msgstr "Entre"
+
+#: includes/utils.php:50
+msgid "and"
+msgstr "et"
+
+#: public/class-sandbox-public-checkout.php:24
+msgid "Your email address"
+msgstr "Votre adresse e-mail"
+
+#: public/class-sandbox-public-checkout.php:32
+msgid "Keep me aware of news and offers"
+msgstr "Tenez-moi au courant de l'actualité et des offres"
+
+#: public/class-sandbox-public-checkout.php:44
+msgid "Phone (mandatory)"
+msgstr "Téléphone (obligatoire)"
+
+#: public/class-sandbox-public-checkout.php:52
+#: public/class-sandbox-public-checkout.php:55
+msgid "First name"
+msgstr "Prénom"
+
+#: public/class-sandbox-public-checkout.php:63
+#: public/class-sandbox-public-checkout.php:66
+msgid "Last name"
+msgstr "Nom"
+
+#: public/class-sandbox-public-checkout.php:74
+#: public/class-sandbox-public-checkout.php:77
+msgid "Company (optionnal)"
+msgstr "Entreprise (Facultatif)"
+
+#: public/class-sandbox-public-checkout.php:96
+#: public/class-sandbox-public-checkout.php:99
+msgid "Address"
+msgstr "Adresse"
+
+#: public/class-sandbox-public-checkout.php:102
+#: public/class-sandbox-public-checkout.php:106
+msgid "Apartment, ... (optionnal)"
+msgstr "Appartement, suite... (Facultatif)"
+
+#: public/class-sandbox-public-checkout.php:115
+#: public/class-sandbox-public-checkout.php:118
+msgid "Postcode"
+msgstr "Code postal"
+
+#: public/class-sandbox-public-checkout.php:127
+#: public/class-sandbox-public-checkout.php:131
+msgid "City"
+msgstr "Ville"
+
+#: public/class-sandbox-public-checkout.php:138
+msgid "Example: it's for my husband birthday"
+msgstr "Exemple: c'est pour l'anniversaire de mon conjoint"
+
+#: public/class-sandbox-public-checkout.php:149
+msgid "Would you like a reduced packaging to limit ecologique impact ?"
+msgstr "Souhaitez-vous un emballage réduit pour limiter l'impact écologique ?"
+
+#: public/class-sandbox-public-checkout.php:170
+msgid "Limited packaging"
+msgstr "Emballage réduit"
+
+#: public/class-sandbox-public-checkout.php:172
+msgid "Without Limited packaging"
+msgstr "Sans emballage réduit"
+
+#: public/class-sandbox-public-product-extras.php:21
+msgid "Display name in cart"
+msgstr "Nom affiché dans le panier"
+
+#: public/class-sandbox-public-woocommerce-template.php:95
+msgid "Paypal acceptance mark"
+msgstr "Paypal logo"
+
+#: public/templates/woocommerce/cart/cart-item-data.php:43
+msgid "Extra charge of :"
+msgstr "Supplément :"
+
+#: public/templates/woocommerce/cart/cart-shipping.php:32
+msgid "Select a shipping method"
+msgstr "Sélectionnez une livraison"
+
+#: public/templates/woocommerce/cart/cart-shipping.php:81
+msgid "Free shipping from"
+msgstr "Offert à partir de"
+
+#: public/templates/woocommerce/cart/cart-totals.php:45
+msgid "Backorder 60 days"
+msgstr "Retour 60 jours"
+
+#: public/templates/woocommerce/cart/cart-totals.php:48
+msgid ""
+"With us no worries about the backorder, you have up to 60 days to return "
+"your items."
+msgstr ""
+"Avec nous pas de soucis sur le retour, vous avez jusqu’à 60 jours pour "
+"retourner vos articles."
+
+#: public/templates/woocommerce/cart/cart-totals.php:54
+msgid "Client service 6/7d"
+msgstr "Service client 6/7j"
+
+#: public/templates/woocommerce/cart/cart-totals.php:57
+msgid "A question ? You can call us at 01.34.45.64.21"
+msgstr "Une question ? Nous sommes joignable au 01.34.45.64.21"
+
+#: public/templates/woocommerce/cart/cart-totals.php:59
+msgid "(Local call price)"
+msgstr "(Prix d'un appel local)"
+
+#: public/templates/woocommerce/cart/cart-totals.php:61
+msgid "Monday to friday from 9a.m.-6p.m"
+msgstr "Lundi au vendredi de 9h-18h"
+
+#: public/templates/woocommerce/cart/cart-totals.php:63
+msgid "Saturday 10a.m-1p.m"
+msgstr "Samedi 10-13h"
+
+#: public/templates/woocommerce/cart/cart-totals.php:69
+#: public/templates/woocommerce/checkout/review-order.php:159
+msgid "Secure payment"
+msgstr "Paiement sécurisé"
+
+#: public/templates/woocommerce/cart/cart-totals.php:72
+msgid "Secure payment with our partner Crédit Agricole"
+msgstr "Paiement sécurisé par notre partenaire Crédit Agricole"
+
+#: public/templates/woocommerce/cart/cart-totals.php:85
+msgid "Advantage code"
+msgstr "Code avantage"
+
+#: public/templates/woocommerce/cart/cart-totals.php:87
+msgid "You can type your promotional code or a gift card code"
+msgstr ""
+"Vous pouvez inscrire un code promotionnel ou un code qui provient d’une e-"
+"carte cadeau"
+
+#: public/templates/woocommerce/cart/cart-totals.php:96
+msgid "Type here your advantage code"
+msgstr "Saisissez ici votre code avantage"
+
+#: public/templates/woocommerce/cart/cart-totals.php:114
+#: public/templates/woocommerce/checkout/form-checkout.php:94
+msgid "Order summary"
+msgstr "Récapitulatif de votre commande"
+
+#. translators: %d is replace by number of items in cart
+#: public/templates/woocommerce/cart/cart-totals.php:167
+#: public/templates/woocommerce/checkout/review-order.php:81
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d article"
+msgstr[1] "%d articles"
+
+#: public/templates/woocommerce/cart/cart-totals.php:179
+#: public/templates/woocommerce/checkout/review-order.php:94
+msgid "Shipping cost"
+msgstr "Coût de livraison"
+
+#: public/templates/woocommerce/cart/cart-totals.php:187
+#: public/templates/woocommerce/checkout/review-order.php:102
+msgid "ATI"
+msgstr "TTC"
+
+#: public/templates/woocommerce/cart/cart-totals.php:203
+msgid "Continue shopping"
+msgstr "Continuer mes achats"
+
+#: public/templates/woocommerce/cart/cart.php:26
+#: public/templates/woocommerce/checkout/form-checkout.php:34
+msgid "Your cart."
+msgstr "Votre panier."
+
+#: public/templates/woocommerce/cart/cart.php:31
+#: public/templates/woocommerce/checkout/form-checkout.php:39
+msgid "Need help, "
+msgstr "Besoin d'aide, "
+
+#: public/templates/woocommerce/cart/cart.php:32
+#: public/templates/woocommerce/checkout/form-checkout.php:40
+msgid "call us"
+msgstr "appelez-nous"
+
+#: public/templates/woocommerce/cart/cart.php:108
+msgid "Delete"
+msgstr "Supprimer"
+
+#: public/templates/woocommerce/cart/proceed-to-checkout-button.php:26
+msgid "Validate your cart"
+msgstr "Valider votre panier"
+
+#: public/templates/woocommerce/cart/shipping-calculator.php:26
+msgid "Where do you live ?"
+msgstr "Où habitez-vous ?"
+
+#: public/templates/woocommerce/cart/shipping-calculator.php:29
+msgid ""
+"Indicate your country and your zipcode to discover your shipping method "
+"choices"
+msgstr ""
+"Inscrivez votre pays et votre code postal pour découvrir vos choix de "
+"livraison"
+
+#: public/templates/woocommerce/cart/shipping-calculator.php:37
+msgid "Country flag"
+msgstr "Drapeau du pays"
+
+#: public/templates/woocommerce/cart/shipping-calculator.php:108
+msgid "Search"
+msgstr "Rechercher"
+
+#: public/templates/woocommerce/checkout/form-billing.php:33
+msgid ""
+"Please enter your billing informations or login to retrieve your postal "
+"address."
+msgstr ""
+"Veuillez entrer vos informations de livraison ou connectez-vous à votre "
+"compte pour intégrer votre adresse postale."
+
+#: public/templates/woocommerce/checkout/form-billing.php:35
+msgid "To ensure a delivery without trouble, your phone number is required."
+msgstr ""
+"Afin de garantir une livraison sans encombre, votre numéro de téléphone "
+"mobile est indispensable."
+
+#: public/templates/woocommerce/checkout/form-billing.php:44
+msgid "Open a session"
+msgstr "Ouvrir une session"
+
+#: public/templates/woocommerce/checkout/form-checkout.php:75
+#: public/templates/woocommerce/checkout/review-order.php:166
+msgid "Back to cart"
+msgstr "Revenir au panier"
+
+#: public/templates/woocommerce/checkout/form-checkout.php:80
+#: public/templates/woocommerce/checkout/review-order.php:171
+msgid "Next step"
+msgstr "Étape suivante"
+
+#: public/templates/woocommerce/checkout/payment.php:23
+#: public/templates/woocommerce/checkout/review-order.php:21
+#: public/templates/woocommerce/checkout/review-order.php:160
+msgid "Secured payment"
+msgstr "Paiement sécurisé"
+
+#: public/templates/woocommerce/checkout/payment.php:27
+msgid "Payment method"
+msgstr "Mode de paiement"
+
+#: public/templates/woocommerce/checkout/payment.php:30
+msgid ""
+"Please select your preferred payment method. Payments by credit card are "
+"provided by our partner Crédit Agricole."
+msgstr ""
+"Veuillez sélectionner le mode de paiement que vous préférez. Les paiements "
+"par carte bancaire sont assuré par notre partenaire le Crédit Agricole."
+
+#: public/templates/woocommerce/checkout/payment.php:59
+msgid "You want to make a precision, a request ?"
+msgstr "Vous souhaitez nous indiquer une précision, une demande ?"
+
+#: public/templates/woocommerce/checkout/review-order.php:148
+msgid "Backorders"
+msgstr "Retours"
+
+#: public/templates/woocommerce/checkout/review-order.php:149
+msgid "Backorders within 60 days"
+msgstr "Retour pendant 60 jours"
+
+#: public/templates/woocommerce/checkout/review-order.php:152
+msgid "Contact"
+msgstr "Contact"
+
+#: public/templates/woocommerce/checkout/review-order.php:154
+msgid "Question ?"
+msgstr "Question ?"
+
+#: public/templates/woocommerce/checkout/review-order.php:176
+msgid "Previous step"
+msgstr "Étape précédente"
+
+#. Translators: $s general conditions of sales text.
+#: public/templates/woocommerce/checkout/terms.php:34
+msgid "I have read the %s and i fully support it."
+msgstr "J'ai lu les %s et j'y adhère sans réserve."
+
+#. Translators: $s general conditions of sales text.
+#: public/templates/woocommerce/checkout/terms.php:35
+msgid "terms"
+msgstr "conditions générales de vente"
