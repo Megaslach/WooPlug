@@ -20,6 +20,7 @@
  * @subpackage sandbox/public
  * @author     Mathis <mathis.delmas@abyxo.agency>
  */
+
 class sandbox_Public {
 
 	/**
@@ -53,12 +54,15 @@ class sandbox_Public {
 		$this->version = $version;
 
 	}
-
-	/**
+    /**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
+
+
+
+
 	public function enqueue_styles() {
 
 		/**
@@ -108,4 +112,10 @@ class sandbox_Public {
 
 
 
+
+
+
+
 }
+
+
