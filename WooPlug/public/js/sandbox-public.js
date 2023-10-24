@@ -45,36 +45,9 @@
 
 			timeout = setTimeout(function() {
 				$("[name='update_cart']").trigger("click");
-			}, 1000 );
+			}, 100);
 
 		});
-
-		$(function() {
-			// Gérer le clic sur le bouton "Update cart"
-			$('.update-cart-button').on('click', function() {
-				var $this = $(this);
-				var cartItemKey = $this.data('cart-key');
-				var newQuantity = $this.closest('.cart-item').find('input.qty').val();
-
-				// Effectuer la requête AJAX pour mettre à jour la quantité du produit
-				$.ajax({
-					type: 'POST',
-					url: wc_cart_params.ajax_url,
-					data: {
-						action: 'woocommerce_update_cart',
-						cart_key: cartItemKey,
-						quantity: newQuantity,
-					},
-					success: function(response) {
-						if (response) {
-							// Mettre à jour le contenu du panier sans recharger la page
-							$(document.body).trigger('updated_cart_totals');
-						}
-					}
-				});
-			});
-		});
-
 
 
 
@@ -87,31 +60,8 @@
 			form.trigger('submit');
 		});
 
-		// Add flags in select for choosen country
-		change_select_flag_image($('#calc_shipping_country'));
 
-		$(document).on('change', '#calc_shipping_country', function (e) {
-			change_select_flag_image(this);
-		});
 
-		$( document.body ).on( 'updated_cart_totals', function(){
-			change_select_flag_image($('#calc_shipping_country'));
-		});
-
-		// Make checkout a two steps
-		display_correct_checkout_step();
-
-		$(document.body).on('updated_checkout', function () {
-			display_correct_checkout_step();
-		});
-
-		$(document).on('click', 'div.checkout_steps > a', function(e) {
-			e.preventDefault();
-			var next_step = $(this).attr('data-step');
-			$(`[data-display]:not([data-display="${next_step}"])`).slideToggle(500);
-			$(`[data-display="${next_step}"]`).slideToggle(500);
-			window.location.hash = `#${next_step}`;
-		});
 
 		// Update gift option on cart
 		$(document).on('click', 'a.submit_message', function(e) {

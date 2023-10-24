@@ -9,6 +9,13 @@ body{
 }
 
 
+#cart-update-message{
+    background-color: darkseagreen;
+    margin: 20px;
+    display: none;
+}
+
+
 
 .cart_totals{
     float: unset;
@@ -52,7 +59,7 @@ body{
 }
 
 .checkout-button{
-    background-color: var(--main-button-color);
+    background-color: var(--main-button-color)!important;
     border-radius: 10px;
     color:#fff;
 }
@@ -72,7 +79,10 @@ body{
     padding: 0 20px;
 
 }
-
+.woocommerce-message{
+    background-color :transparent !important;
+    border: none !important;
+}
 .cart_all{
     display: flex;
     flex-direction: column;
@@ -86,6 +96,8 @@ body{
     align-items: center;
     padding: 20px;
 }
+
+
 
 .woocommerce-cart-form__contents table.cart th,
 .woocommerce-cart-form__contents table.cart td {
@@ -129,8 +141,11 @@ button[name='update_cart'] {
 
 /* Styles pour la colonne d'image miniature du produit */
 .product-thumbnail {
-    flex: 1;
-    width: 100px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
+    width: 200px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
+}
+.product-thumbnail img {
+    width: 200px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
+    border-radius: 5px!important;
 }
 
 .product-thumbnail img {
@@ -148,11 +163,25 @@ button[name='update_cart'] {
 .product-name a {
     text-decoration: none;
     color: #333!important;
+    font-size: 2rem ;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-name{
+    margin-bottom: 10px;
 }
 
 /* Styles pour le prix du produit */
 .product-price {
     font-weight: bold;
+}
+
+
+
+.product-remove{
+    display: flex;
+    align-items: center;
 }
 
 /* Styles pour la quantité du produit */
@@ -166,9 +195,11 @@ input.qty::-webkit-inner-spin-button {
 }
 
 /* Styles pour le sous-total */
-.product-subtotal {
+.product-subtotal{
     font-weight: bold;
 }
+
+
 
 /* Styles pour les actions du panier */
 .cart-actions {
@@ -182,6 +213,42 @@ input.qty::-webkit-inner-spin-button {
 .coupon input[type="text"] {
     width: 300px; /* Ajustez la largeur du champ de coupon selon vos besoins */
 }
+
+table {
+    border-collapse: collapse;
+    border: none;
+}
+
+/* Retire les bordures des cellules du tableau */
+.elementor-widget-woocommerce-cart .woocommerce table.cart td.product-name , td.product-price , td.product-quantity, td.product-details, td.product-remove, td.product-subtotal, td.product-thumbnail{
+    border: none!important;
+}
+
+.product-tab{
+    width: 100%;
+}
+
+.remove-and-quantity{
+    display: flex;
+    gap: 10px;
+}
+
+.e-cart__container{
+    display: block !important;
+}
+.e-cart-section{
+    padding: 0 !important;
+}
+
+/** no bullets on item list. */
+ul.woocommerce-cart-form__contents {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+
+
 
 
 

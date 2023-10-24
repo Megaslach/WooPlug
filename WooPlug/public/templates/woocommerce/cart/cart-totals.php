@@ -18,6 +18,15 @@
 // Assurez-vous que le fichier n'est pas chargé directement depuis WordPress.
 defined('ABSPATH') || exit;
 ?>
+<script>
+    $('.woocommerce').on('click', '#apply_code', function (e) {
+        e.preventDefault();
+
+        $(this).attr('clicked', true);
+        let form = $('#' + $(this).attr('form'));
+        form.trigger('submit');
+    });
+</script>
 
 <div class="cart_totals <?php echo (WC()->customer->has_calculated_shipping()) ? 'calculated_shipping' : ''; ?>">
     <!-- Div contenant les totaux du panier avec une classe "calculated_shipping" si des frais de livraison ont été calculés. -->
@@ -135,21 +144,38 @@ defined('ABSPATH') || exit;
 
     <div class="total_cart white-card">
         <div class="total_cart_info">
-            <div class="coupon">
-                    <div class="custom-coupon-form">
-                        <h3><?php esc_html_e( 'Coupon', 'woocommerce' ); ?></h3>
-                        <form class="coupon" method="post">
-                            <p><?php esc_html_e( 'Have a coupon?', 'woocommerce' ); ?> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button></p>
-                        </form>
-                    </div>
-            </div>
-
-
-
+            <?php if (wc_coupons_enabled()) { ?>
+                <div class="coupon">
+                    <h2 class="coupon-title menstate-title"><?php esc_html_e('Advantage code', 'menstate'); ?></h2>
+                    <span class="coupon-description menstate-description">
+					<?php esc_html_e('You can type your promotional code or a gift card code', 'menstate'); ?>
+				</span>
+                    <input
+                            form="woocommerce-cart-form"
+                            type="text"
+                            name="coupon_code"
+                            class="input-text"
+                            id="coupon_code"
+                            value=""
+                            placeholder="<?php esc_attr_e('Type here your advantage code', 'menstate'); ?>" />
+                    <button
+                            form="woocommerce-cart-form"
+                            type="submit"
+                            class="button"
+                            id="apply_code"
+                            name="apply_coupon"
+                            value="Ok">
+                        Ok
+                    </button>
+                    <?php do_action('woocommerce_cart_coupon'); ?>
+                </div>
+            <?php } ?>
 
 
             <h2><?php esc_html_e('Cart totals', 'woocommerce'); ?></h2>
         <!-- Titre de la section des totaux du panier. -->
+
+
 
         <table cellspacing="0" class="shop_table shop_table_responsive">
             <!-- Tableau affichant les détails des totaux du panier. -->
@@ -168,24 +194,6 @@ defined('ABSPATH') || exit;
                     <td data-title="<?php echo esc_attr(wc_cart_totals_coupon_label($coupon, false)); ?>"><?php wc_cart_totals_coupon_html($coupon); ?></td>
                 </tr>
             <?php endforeach; ?>
-
-            <?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
-                <!-- Si le panier nécessite des frais de port et que l'affichage des frais de port est activé, affiche cette section. -->
-
-                <!-- Affiche les frais de livraison. -->
-
-                <?php do_action('woocommerce_cart_totals_after_shipping'); ?>
-
-            <?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')) : ?>
-                <!-- Si le panier nécessite des frais de port et que le calcul des frais de port est activé dans les paramètres WooCommerce, affiche cette section. -->
-
-                <tr class="shipping">
-                    <!-- Ligne affichant les frais de port. -->
-                    <th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
-                    <td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>"><?php woocommerce_shipping_calculator(); ?></td>
-                </tr>
-
-            <?php endif; ?>
 
             <!-- Boucle pour afficher des frais supplémentaires, le cas échéant. -->
             <?php foreach (WC()->cart->get_fees() as $fee) : ?>
