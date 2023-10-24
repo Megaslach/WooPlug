@@ -236,15 +236,15 @@ table {
 .e-cart__container{
     display: block !important;
 }
-.e-cart-section{
-    padding: 0 !important;
-}
+
 
 /** no bullets on item list. */
 ul.woocommerce-cart-form__contents {
     list-style: none;
     padding-left: 0;
 }
+
+
 
 
 
