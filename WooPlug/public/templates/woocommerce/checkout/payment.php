@@ -21,7 +21,7 @@ if ( ! wp_doing_ajax() ) {
 	do_action( 'woocommerce_review_order_before_payment' );
 }
 ?>
-<div id="payment" class="woocommerce-checkout-payment">
+<div id="payment" class="woocommerce-checkout-payment" data-display="payment_step" style="display: none">
 	<?php if ( WC()->cart->needs_payment() ) : ?>
 		<ul class="wc_payment_methods payment_methods methods">
 			<?php
@@ -46,6 +46,30 @@ if ( ! wp_doing_ajax() ) {
 			<br/><button type="submit" class="button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'woocommerce' ); ?>"><?php esc_html_e( 'Update totals', 'woocommerce' ); ?></button>
 		</noscript>
 
+        <div class="woocommerce-additional-fields">
+            <h3>Vous avez quelque chose à ajouter ?</h3>
+            <?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>
+
+            <?php if ( apply_filters( 'woocommerce_enable_order_notes_field', 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' ) ) ) : ?>
+
+                <?php if ( ! WC()->cart->needs_shipping() || wc_ship_to_billing_address_only() ) : ?>
+
+                    <h3><?php esc_html_e( 'Additional information', 'woocommerce' ); ?></h3>
+
+                <?php endif; ?>
+
+                <div class="woocommerce-additional-fields__field-wrapper">
+                    <?php foreach ( $checkout->get_checkout_fields( 'order' ) as $key => $field ) : ?>
+                        <?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+                    <?php endforeach; ?>
+                </div>
+
+            <?php endif; ?>
+
+            <?php do_action( 'woocommerce_after_order_notes', $checkout ); ?>
+        </div>
+
+
 		<?php wc_get_template( 'checkout/terms.php' ); ?>
 
 		<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
@@ -56,6 +80,7 @@ if ( ! wp_doing_ajax() ) {
 
 		<?php wp_nonce_field( 'woocommerce-process_checkout', 'woocommerce-process-checkout-nonce' ); ?>
 	</div>
+
 </div>
 <?php
 if ( ! wp_doing_ajax() ) {

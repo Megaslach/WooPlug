@@ -1,7 +1,15 @@
 (function( $ ) {
 	'use strict';
 
+
 	$(function() {
+		if ($('.checkout').length > 0) {
+			// Si vous êtes sur la page de checkout, définissez le point d'ancrage sur #customer-detail-step
+			window.location.hash = "customer_details_step";
+		}
+
+
+
 
 		// Make minus and plus button fonctionnal
 		$('.woocommerce').on('click', 'input.qty_button', function (e) {
@@ -45,11 +53,9 @@
 
 			timeout = setTimeout(function() {
 				$("[name='update_cart']").trigger("click");
-			}, 100);
+			}, 1000 );
 
 		});
-
-
 
 		// Rebind apply coupon input to form submit event
 		$('.woocommerce').on('click', '#apply_code', function (e) {
@@ -61,7 +67,20 @@
 		});
 
 
+		// Make checkout a two steps
+		display_correct_checkout_step();
 
+		$(document.body).on('updated_checkout', function () {
+			display_correct_checkout_step();
+		});
+
+		$(document).on('click', 'div.checkout_steps > a', function(e) {
+			e.preventDefault();
+			var next_step = $(this).attr('data-step');
+			$(`[data-display]:not([data-display="${next_step}"])`).slideToggle(500);
+			$(`[data-display="${next_step}"]`).slideToggle(500);
+			window.location.hash = `#${next_step}`;
+		});
 
 		// Update gift option on cart
 		$(document).on('click', 'a.submit_message', function(e) {
@@ -141,6 +160,7 @@
 		}
 	}
 
+
 	// Use same logic than woocommerce scripts
 	var is_blocked = function( $node ) {
 		return $node.is( '.processing' ) || $node.parents( '.processing' ).length;
@@ -161,5 +181,6 @@
 	var unblock = function( $node ) {
 		$node.removeClass( 'processing' ).unblock();
 	};
+
 
 })( jQuery );

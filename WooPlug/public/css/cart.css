@@ -142,10 +142,16 @@ button[name='update_cart'] {
 /* Styles pour la colonne d'image miniature du produit */
 .product-thumbnail {
     width: 200px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
+
 }
 .product-thumbnail img {
     width: 200px !important; /* Ajustez la largeur de l'image miniature selon vos besoins */
     border-radius: 5px!important;
+
+}
+
+div.product-thumbnail{
+    margin-right: 20px!important;
 }
 
 .product-thumbnail img {

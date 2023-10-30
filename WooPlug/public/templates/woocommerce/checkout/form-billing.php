@@ -29,6 +29,12 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php endif; ?>
 
+    <p class="checkout-billing-description">
+        <?php _e('Please enter your billing informations or login to retrieve your postal address.', 'sandbox'); ?>
+        <br>
+        <?php _e('To ensure a delivery without trouble, your phone number is required.', 'sandbox'); ?>
+    </p>
+
 	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
 
 	<div class="woocommerce-billing-fields__field-wrapper">

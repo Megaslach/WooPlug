@@ -17,16 +17,9 @@
 
 // Assurez-vous que le fichier n'est pas chargé directement depuis WordPress.
 defined('ABSPATH') || exit;
-?>
-<script>
-    $('.woocommerce').on('click', '#apply_code', function (e) {
-        e.preventDefault();
 
-        $(this).attr('clicked', true);
-        let form = $('#' + $(this).attr('form'));
-        form.trigger('submit');
-    });
-</script>
+?>
+
 
 <div class="cart_totals <?php echo (WC()->customer->has_calculated_shipping()) ? 'calculated_shipping' : ''; ?>">
     <!-- Div contenant les totaux du panier avec une classe "calculated_shipping" si des frais de livraison ont été calculés. -->
@@ -146,9 +139,9 @@ defined('ABSPATH') || exit;
         <div class="total_cart_info">
             <?php if (wc_coupons_enabled()) { ?>
                 <div class="coupon">
-                    <h2 class="coupon-title menstate-title"><?php esc_html_e('Advantage code', 'menstate'); ?></h2>
-                    <span class="coupon-description menstate-description">
-					<?php esc_html_e('You can type your promotional code or a gift card code', 'menstate'); ?>
+                    <h2 class="coupon-title sandbox-title"><?php esc_html_e('Advantage code', 'sandbox'); ?></h2>
+                    <span class="coupon-description sandbox-description">
+					<?php esc_html_e('You can type your promotional code or a gift card code', 'sandbox'); ?>
 				</span>
                     <input
                             form="woocommerce-cart-form"
@@ -157,7 +150,7 @@ defined('ABSPATH') || exit;
                             class="input-text"
                             id="coupon_code"
                             value=""
-                            placeholder="<?php esc_attr_e('Type here your advantage code', 'menstate'); ?>" />
+                            placeholder="<?php esc_attr_e('Type here your advantage code', 'sandbox'); ?>" />
                     <button
                             form="woocommerce-cart-form"
                             type="submit"
@@ -186,6 +179,28 @@ defined('ABSPATH') || exit;
                 <td data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
             </tr>
 
+            <tr class="shipping-cost">
+                <th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
+                <td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>">
+                    <?php foreach( WC()->session->get('shipping_for_package_0')['rates'] as $method_id => $rate ){
+                        if( WC()->session->get('chosen_shipping_methods')[0] == $method_id ){
+                            $rate_label = $rate->label; // The shipping method label name
+                            $rate_cost_excl_tax = floatval($rate->cost); // The cost excluding tax
+                            // The taxes cost
+                            $rate_taxes = 0;
+                            foreach ($rate->taxes as $rate_tax)
+                                $rate_taxes += floatval($rate_tax);
+                            // The cost including tax
+                            $rate_cost_incl_tax = $rate_cost_excl_tax + $rate_taxes;
+
+                            echo '<p class="shipping-total">
+                                    <span >' . wc_price($rate_cost_incl_tax) . '</span>
+                                  </p>';
+                            break;
+                        }
+                    } ?>
+                </td>
+            </tr>
 
             <!-- Boucle pour afficher les remises (coupons) appliquées au panier. -->
             <?php foreach (WC()->cart->get_coupons() as $code => $coupon) : ?>
