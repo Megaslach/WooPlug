@@ -42,7 +42,6 @@ class sandbox_Public_Checkout
         $checkout_fields['billing']['billing_phone']['priority'] = 5;
         $checkout_fields['billing']['billing_phone']['placeholder'] = __('Phone (mandatory)', 'sandbox');
         $checkout_fields['billing']['billing_phone']['class'] = array('form-row-half', 'sandbox-field');
-
         return $checkout_fields;
     }
 
@@ -58,10 +57,10 @@ class sandbox_Public_Checkout
     private function edit_checkout_last_name_field($checkout_fields)
     {
         $checkout_fields['billing']['billing_last_name']['placeholder'] = __('Last name', 'sandbox');
-
+        $checkout_fields['billing']['billing_last_name']['label'] = false;
         $checkout_fields['billing']['billing_last_name']['class'] = array('form-row-last', 'sandbox-field');
         $checkout_fields['shipping']['shipping_last_name']['placeholder'] = __('Last name', 'sandbox');
-
+        $checkout_fields['shipping']['shipping_last_name']['label'] = false;
         $checkout_fields['shipping']['shipping_last_name']['class'] = array('form-row-last', 'sandbox-field');
         return $checkout_fields;
     }
@@ -95,9 +94,11 @@ class sandbox_Public_Checkout
         $checkout_fields['shipping']['shipping_address_1']['placeholder'] = __('Address', 'sandbox');
         $checkout_fields['shipping']['shipping_address_1']['class'] = array('form-row-wide', 'sandbox-field');
         $checkout_fields['billing']['billing_address_2']['placeholder'] = __('Apartment, ... (optionnal)', 'sandbox');
+        $checkout_fields['billing']['billing_address_2']['label'] = '<span class="space"></span>';
         $checkout_fields['billing']['billing_address_2']['label_class'] = [];
         $checkout_fields['billing']['billing_address_2']['class'] = array('form-row-wide', 'sandbox-field');
         $checkout_fields['shipping']['shipping_address_2']['placeholder'] = __('Apartment, ... (optionnal)', 'sandbox');
+        $checkout_fields['shipping']['shipping_address_2']['label'] = '<span class="space"></span>';
         $checkout_fields['shipping']['shipping_address_2']['label_class'] = [];
         $checkout_fields['shipping']['shipping_address_2']['class'] = array('form-row-wide', 'sandbox-field');
         return $checkout_fields;

@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 $items_count = WC()->cart->cart_contents_count;
 $submit_button_text = __('Secured payment', 'sandbox');
 ?>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <div class="woocommerce-checkout-review-order-table">
     <table class="shop_table sandbox-review-order-table">

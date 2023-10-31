@@ -28,6 +28,8 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 
 ?>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
         <div class="checkout_div__wrapper">
@@ -59,6 +61,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                             </div>
                         <?php endif; ?>
 
+                        <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
                     </div>
 
                     <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>

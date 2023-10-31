@@ -3,7 +3,6 @@
 }
 
 #customer_details{
-    padding: 10px;
     display:flex;
     flex-direction: column;
 }
@@ -26,9 +25,13 @@ div.checkout_div__wrapper {
     color: var(--main-black-color);
 }
 
-.col-2, .col-1{
+.col-2{
     width: 100%!important;
     padding: 10px;
+}
+
+.col-1{
+    width: 100%!important;
 }
 
 td.product-name, .product-total {

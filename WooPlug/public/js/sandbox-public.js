@@ -1,14 +1,7 @@
 (function( $ ) {
 	'use strict';
 
-
 	$(function() {
-		if ($('.checkout').length > 0) {
-			// Si vous êtes sur la page de checkout, définissez le point d'ancrage sur #customer-detail-step
-			window.location.hash = "customer_details_step";
-		}
-
-
 
 
 		// Make minus and plus button fonctionnal
@@ -66,6 +59,16 @@
 			form.trigger('submit');
 		});
 
+		// Add flags in select for choosen country
+		change_select_flag_image($('#calc_shipping_country'));
+
+		$(document).on('change', '#calc_shipping_country', function (e) {
+			change_select_flag_image(this);
+		});
+
+		$( document.body ).on( 'updated_cart_totals', function(){
+			change_select_flag_image($('#calc_shipping_country'));
+		});
 
 		// Make checkout a two steps
 		display_correct_checkout_step();
@@ -82,69 +85,6 @@
 			window.location.hash = `#${next_step}`;
 		});
 
-		// Update gift option on cart
-		$(document).on('click', 'a.submit_message', function(e) {
-			e.preventDefault();
-			var data_id = $(this).attr('data-id');
-			var product_key = $(this).closest('div[data-product-key]').attr('data-product-key');
-			var product_id = $(this).closest('div[data-product-key]').attr('data-product-id');
-			var product_meta_id = $('textarea[data-id="'+ data_id + '"').attr('data-meta-id');
-			var gift_message = $('textarea[data-id="'+ data_id + '"').val();
-			var data = {
-				'action': 'menstate_update_gift_message',
-				'product_id': product_id,
-				'product_key': product_key,
-				'product_meta_id': product_meta_id,
-				'value': gift_message
-			}
-
-			block( $('#woocommerce-cart-form') );
-			$.post(ajaxurl, data, function(response){
-				// Submit form
-				unblock( $('#woocommerce-cart-form') );
-				$("[name='update_cart']").prop("disabled", false);
-				$("[name='update_cart']").trigger("click");
-			});
-		});
-
-		// delete gift option on delete link clicked
-		$(document).on('click', 'a.delete_gift', function (e) {
-			e.preventDefault();
-			var group_id = $(this).attr('data-group-id');
-			var product_key = $(this).closest('div[data-product-key]').attr('data-product-key');
-			var data = {
-				'action': 'menstate_delete_gift_option',
-				'product_key': product_key,
-				'group_id': group_id
-			};
-			block( $('#woocommerce-cart-form') );
-			$.post(ajaxurl, data, function(response){
-				// Submit form
-				unblock( $('#woocommerce-cart-form') );
-				$("[name='update_cart']").prop("disabled", false);
-				$("[name='update_cart']").trigger("click");
-			});
-		});
-
-		// activate gift option on radio button checked
-		$(document).on('change', 'input.custom_radio.gift_option', function (e) {
-			if ($(this).is(':checked')) {
-				var product_key = $(this).closest('div[data-product-key]').attr('data-product-key');
-				var product_metas = $.parseJSON($(this).attr('data-meta'));
-				var data = {
-					'action': 'menstate_add_gift_option',
-					'product_key': product_key,
-					...product_metas
-				};
-				block( $('#woocommerce-cart-form') );
-				$.post(ajaxurl, data, function(response){
-					// Submit form
-					unblock( $('#woocommerce-cart-form') );
-					$("[name='update_cart']").prop("disabled", false);
-					$("[name='update_cart']").trigger("click");
-				});
-			}
-		});
 	});
 
 	function change_select_flag_image(element) {
@@ -157,9 +97,10 @@
 		if (current_step && $(`[data-display="${current_step}"]`).length) {
 			$(`[data-display]:not([data-display="${current_step}"])`).hide();
 			$(`[data-display="${current_step}"]`).show();
-		}
-	}
 
+		}
+
+	}
 
 	// Use same logic than woocommerce scripts
 	var is_blocked = function( $node ) {
@@ -181,6 +122,5 @@
 	var unblock = function( $node ) {
 		$node.removeClass( 'processing' ).unblock();
 	};
-
 
 })( jQuery );
